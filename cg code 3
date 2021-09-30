@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+
+#define ll long long
+
+using namespace std;
+
+
+void init_code()
+{
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r",stdin);
+        freopen("output.txt", "w",stdout);
+    #endif //ONLINE_JUDGE
+}
+
+int main()
+{
+
+    init_code();
+
+    int t;
+    cin>>t;
+    for(int k =1;k<=t;k++)
+    {
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        if(n==0)
+        {
+            cout<<"Case #"<<k<<": "<<0<<endl;
+        }else{
+            bool check;
+            for(int i=0;i<n;i++)
+            {
+                if(s[i]=='X')
+                {
+                    check = true;
+                    break;
+                }else if(s[i]=='O')
+                {
+                    check = false;
+                    break;
+                }
+            }
+            int count = 0;
+            for(int i =0;i<n;i++)
+            {
+                if(s[i]=='X' && check == false)
+                {
+                    count++;
+                    check = true;
+                }else if(s[i]=='O' && check == true)
+                {
+                    count ++;
+                    check = false;
+                }
+            }
+            cout<<"Case #"<<k<<": "<<count<<endl;
+        }
+    }
+}
+
