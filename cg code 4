@@ -1,0 +1,75 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+#define ll long long 
+ll mod= 1000000007;
+
+
+ll mul(int a,int b)
+{
+	//multipy
+	
+    return ((a%mod)*(b%mod))%mod;
+}
+
+
+ll add(int  a,int b)
+{
+	//add
+	
+    return ((a%mod)+(b%mod))%mod;
+}
+
+
+
+int main()
+{
+	ll t=1;
+	cin>>t;
+	for(int k=1;k<=t;k++)	
+	{
+		int n;
+		cin>>n;
+		string s;
+		cin>>s;
+		set<ll> o;
+		set<ll>x;
+		ll  count=0;
+		if(n==0)
+		{
+		    cout<<"Case #"<<k<<": "<<0<<endl;
+		}else{
+		   map<int,int>mp;
+		   set<int>dsa;
+		for(int i=0;i<n;i++)
+		{
+			set<int>sdsf;
+			if(s[i]=='X')
+			{
+				if(o.size()!=0)
+					count=add(mul((*(o.begin()))+1+1-1,n-i),count);
+					x.clear();
+					map<int,int>ndsia;
+				o.clear();
+				set<ll>fag;
+				x.insert(i);
+				map<int,int>ma;
+			}
+			else if(s[i]=='O')
+			{
+				
+				if(x.size()!=0)
+					count=add(mul((*(x.begin()))+1+1-1,n-i),count);
+					map<int,int>iojda;
+				o.clear();
+				set<int>dfg;
+				o.insert(i);
+				set<ll>sff;
+				x.clear();
+			}
+		}
+		cout<<"Case #"<<k<<": "<<count<<endl;
+		}
+	}
+    
+}
